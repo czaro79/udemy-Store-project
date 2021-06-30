@@ -3,21 +3,19 @@ package com.czarek.learning.java.SPOJ;
 import models.Bread;
 import models.Item;
 import models.Milk;
+import models.Newspaper;
 
 public class Main {
 
     public static void main(String[] args) {
-        Bread bread = new Bread( "Zalesznay", 123, false);
-        Item item = new Item(12);
-        Milk milk = new Milk("Dairy", 1222, "BoX", false);
+        Newspaper newspaper = new Newspaper("Dziennik wschodni", "daily", 200);
+        System.out.println(newspaper);
 
-        milk.setLactoseFree(true);
-        bread.setGlutenFree(true);
-        System.out.println(item);
-        System.out.println(milk);
-        System.out.println(bread);
+        newspaper.setTitleOfNewspaper("Kurier lubelski");
+        newspaper.setTypeOfNewspaper("magAzine");
+        newspaper.setQuantity(350);
 
-        Item[] table = new Item[]{item, milk, bread};
+        System.out.println(newspaper);
 
     }
 }
