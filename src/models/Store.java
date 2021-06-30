@@ -49,4 +49,20 @@ public class Store {
         return temp.toString();
     }
 
+    public double[] showValueOfAllItemsInBuyingPSellingP() {
+        if (store.isEmpty()) {
+            throw new IllegalArgumentException("Cannot check the value of items in an empty store.");
+        }
+
+        double totalValueInSellingPrices = 0;
+        double totalValueInBuyingPrices = 0;
+
+        for (Item item : store
+        ) {
+            totalValueInBuyingPrices += item.getBuyingPrice() * item.getQuantity();
+            totalValueInSellingPrices += item.getSellingPrice() * item.getQuantity();
+        }
+        return new double[]{totalValueInBuyingPrices, totalValueInSellingPrices};
+    }
+
 }
