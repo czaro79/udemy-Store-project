@@ -1,0 +1,19 @@
+item:1234
+bread:Piekarnia Zaleszany:100:false
+bread:Piekarnia Zaleszany:100:true
+bread:Piekarnia Lublin:10:false
+bread:Piekarnia Lublin:5:true
+milk:Mleczarnia Krasnystaw:100:bottle:true
+milk:Mleczarnia Krasnystaw:10:bottle:false
+milk:Mleczarnia Krasnystaw:100:box:true
+milk:Mleczarnia Krasnystaw:15:box:false
+milk:POLMLEK:10:bottle:true
+milk:POLMLEK:5:bottle:false
+milk:POLMLEK:20:box:true
+milk:POLMLEK:10:box:false
+newspaper:Dziennik Wschodni:daily:150
+newspaper:POLITYKA:weekly:25
+newspaper:VIVA:magazine:15
+newspaper:Kurier Lubelski:daily:80
+newspaper:ANGORA:weekly:45
+newspaper:VIVA:magazine:15

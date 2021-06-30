@@ -15,7 +15,7 @@ public class Item {
         this.setBuyingPrice(0);
     }
 
-    public Item (Item source) {
+    public Item(Item source) {
         this.setQuantity(source.getQuantity());
         this.sellingPrice = source.sellingPrice;
         this.buyingPrice = source.buyingPrice;

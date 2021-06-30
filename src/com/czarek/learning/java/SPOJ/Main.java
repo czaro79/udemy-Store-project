@@ -2,24 +2,31 @@ package com.czarek.learning.java.SPOJ;
 
 import models.*;
 
+import java.io.FileNotFoundException;
+import java.text.DecimalFormat;
 import java.util.Arrays;
 
 
 public class Main {
 
     public static void main(String[] args) {
-        Newspaper newspaper = new Newspaper("Dziennik wschodni", "daily", 1);
-        Bread bread = new Bread("Zaleszany", 1, false);
-        Milk milk = new Milk("Mleczarnia Krasnystaw", 1, "bottle", false);
-        Item item = new Item(1);
 
         Store store = new Store();
 
-        store.addItem(newspaper);
-        store.addItem(bread);
-        store.addItem(milk);
-        store.addItem(item);
-        System.out.println(Arrays.toString(store.showValueOfAllItemsInBuyingPSellingP())) ;
+        try {
+            store.loadStore();
+        } catch (FileNotFoundException e) {
+            System.out.println(e.getMessage());
+        }
+
+        double[] storeValue = store.showValueOfAllItemsInBuyingPSellingP();
+        System.out.println(store);
+
+
+        DecimalFormat df= new DecimalFormat("0.00");
+        System.out.println("Wartosc towaru w sklepie:");
+        System.out.println("\tW cenach zakupu: " + df.format(storeValue[0]) + " PLN");
+        System.out.println("\tW cenach sprzedaży: " + df.format(storeValue[1]) + " PLN");
 
     }
 }

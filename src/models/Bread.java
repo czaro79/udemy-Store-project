@@ -27,6 +27,16 @@ public class Bread extends Item {
         this.isGlutenFree = source.isGlutenFree;
     }
 
+    public void updateItem(Bread bread) {
+        if (this.bakeryName.equals(bread.bakeryName) && this.isGlutenFree == bread.isGlutenFree) {
+            this.setQuantity(this.getQuantity() + bread.getQuantity());
+        }
+
+        this.setQuantity(this.getQuantity() + bread.getQuantity());
+
+    }
+
+
     public boolean getGlutenFree() {
         return isGlutenFree;
     }
