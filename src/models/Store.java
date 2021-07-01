@@ -95,7 +95,7 @@ public class Store {
                 }
             }
         }
-        System.out.println("THE STORE IS LOADED - HAVE A NICE SHOPPING!\n");
+        System.out.println("HAVE A NICE SHOPPING! NEW PRODUCTS DELIVERED.\n");
         scan.close();
     }
 
