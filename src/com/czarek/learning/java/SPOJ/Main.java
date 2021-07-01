@@ -19,14 +19,6 @@ public class Main {
             System.out.println(e.getMessage());
         }
 
-        double[] storeValue = store.showValueOfAllItemsInBuyingPSellingP();
-        System.out.println(store);
-
-
-        DecimalFormat df= new DecimalFormat("0.00");
-        System.out.println("Wartosc towaru w sklepie:");
-        System.out.println("\tW cenach zakupu: " + df.format(storeValue[0]) + " PLN");
-        System.out.println("\tW cenach sprzedaży: " + df.format(storeValue[1]) + " PLN");
 
     }
 }
