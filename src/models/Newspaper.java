@@ -1,11 +1,10 @@
 package models;
 
 public class Newspaper extends Item {
-    private final String name = "newspaper";
     private String titleOfNewspaper;
     private String typeOfNewspaper;
 
-    public Newspaper(String titleOfNewspaper, String typeOfNewspaper, int quantity) {
+    public Newspaper(String titleOfNewspaper, String typeOfNewspaper, int quantity) throws IllegalArgumentException{
         super(quantity);
 
         if (titleOfNewspaper == null || titleOfNewspaper.isBlank()) {
@@ -46,7 +45,7 @@ public class Newspaper extends Item {
         return titleOfNewspaper;
     }
 
-    public void setTitleOfNewspaper(String titleOfNewspaper) {
+    public void setTitleOfNewspaper(String titleOfNewspaper) throws IllegalArgumentException{
         if (titleOfNewspaper == null || titleOfNewspaper.isBlank()) {
             throw new IllegalArgumentException("Title of newspaper cannot be null/blank.");
         }
@@ -57,7 +56,7 @@ public class Newspaper extends Item {
         return typeOfNewspaper;
     }
 
-    public void setTypeOfNewspaper(String typeOfNewspaper) {
+    public void setTypeOfNewspaper(String typeOfNewspaper) throws IllegalArgumentException{
         if (typeOfNewspaper == null || typeOfNewspaper.isBlank()) {
             throw new IllegalArgumentException("Type of newspaper cannot be null/blank.");
         }
@@ -80,7 +79,7 @@ public class Newspaper extends Item {
     }
 
     public String toString() {
-        return "Name: " + name + "\n" +
+        return "Name: " + this.getClass().getSimpleName() + "\n" +
                 "Title: " + titleOfNewspaper + "\n" +
                 "Quantity: " + getQuantity() + " pieces\n" +
                 "Type: " + typeOfNewspaper + "\n" +

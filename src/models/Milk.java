@@ -1,13 +1,12 @@
 package models;
 
 public class Milk extends Item {
-    private final String name = "milk";
     private String dairyName;
     private String packaging;
     private boolean isLactoseFree;
 
 
-    public Milk(String dairyName, int quantity, String packaging, boolean isLactoseFree) {
+    public Milk(String dairyName, int quantity, String packaging, boolean isLactoseFree) throws IllegalArgumentException{
         super(quantity);
 
         if (dairyName == null || dairyName.isBlank()) {
@@ -19,7 +18,6 @@ public class Milk extends Item {
         if (!(packaging.equalsIgnoreCase("Box") || packaging.equalsIgnoreCase("Bottle"))) {
             throw new IllegalArgumentException("Packaging of milk has to be bottle or box.");
         }
-
 
         this.dairyName = dairyName;
         this.packaging = packaging;
@@ -39,15 +37,11 @@ public class Milk extends Item {
         this.setBuyingPrice(source.getBuyingPrice());
     }
 
-    public String getName() {
-        return name;
-    }
-
     public String getDairyName() {
         return dairyName;
     }
 
-    public void setDairyName(String dairyName) {
+    public void setDairyName(String dairyName) throws IllegalArgumentException{
         if (dairyName == null || dairyName.isBlank()) {
             throw new IllegalArgumentException("Dairy cannot be null/blank");
         }
@@ -58,7 +52,7 @@ public class Milk extends Item {
         return packaging;
     }
 
-    public void setPackaging(String packaging) {
+    public void setPackaging(String packaging) throws IllegalArgumentException{
         if (packaging == null || packaging.isBlank()) {
             throw new IllegalArgumentException("Packaging of milk cannot be null/blank");
         }
@@ -79,7 +73,7 @@ public class Milk extends Item {
     }
 
     public String toString() {
-        return "Name: " + name + "\n" +
+        return "Name: " + this.getClass().getSimpleName() + "\n" +
                 "Dairy: " + dairyName + "\n" +
                 "Quantity: " + getQuantity() + " pieces\n" +
                 "Packaging: " + packaging + "\n" +

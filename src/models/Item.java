@@ -1,12 +1,12 @@
 package models;
 
 public class Item {
-    private final String name = "item";
+
     private int quantity;
     private double sellingPrice;
     private double buyingPrice;
 
-    public Item(int quantity) {
+    public Item(int quantity) throws IllegalArgumentException {
         if (quantity < 0) {
             throw new IllegalArgumentException("Quantity lower than zero. Impossible.");
         }
@@ -25,7 +25,7 @@ public class Item {
         return quantity;
     }
 
-    public void setQuantity(int quantity) {
+    public void setQuantity(int quantity) throws IllegalArgumentException {
         if (quantity < 0) {
             throw new IllegalArgumentException("Quantity lower than zero. Impossible.");
         }
@@ -48,12 +48,8 @@ public class Item {
         return buyingPrice;
     }
 
-    public String getName() {
-        return name;
-    }
-
     public String toString() {
-        return "Name: " + name + "\n" +
+        return "Name: " + this.getClass().getSimpleName() + "\n" +
                 "Quantity: " + quantity + "\n" +
                 "Price: " + sellingPrice + " PLN\n";
     }

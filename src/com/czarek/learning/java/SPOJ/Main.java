@@ -3,9 +3,6 @@ package com.czarek.learning.java.SPOJ;
 import models.*;
 
 import java.io.FileNotFoundException;
-import java.text.DecimalFormat;
-import java.util.Arrays;
-
 
 public class Main {
 
@@ -18,6 +15,8 @@ public class Main {
         } catch (FileNotFoundException e) {
             System.out.println(e.getMessage());
         }
+
+        System.out.println(store.toString());
 
 
     }
