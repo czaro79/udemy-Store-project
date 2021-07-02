@@ -6,7 +6,7 @@ public class Item {
     private double sellingPrice;
     private double buyingPrice;
 
-    public Item(int quantity) throws IllegalArgumentException {
+    public Item(int quantity) {
         if (quantity < 0) {
             throw new IllegalArgumentException("Quantity lower than zero. Impossible.");
         }
@@ -25,7 +25,7 @@ public class Item {
         return quantity;
     }
 
-    public void setQuantity(int quantity) throws IllegalArgumentException {
+    public void setQuantity(int quantity) {
         if (quantity < 0) {
             throw new IllegalArgumentException("Quantity lower than zero. Impossible.");
         }

@@ -23,7 +23,20 @@ public class Main {
             Scanner scan = new Scanner(System.in);
 
 
+            int option = scan.hasNextInt() ? scan.nextInt() : -404;
+            if (option < 0 || option > 10) {
+                continue;
+            }
+
+            if (option > 0 ) {
+                store.buyItem(option);
+            } else {
+                scan.close();
+                break;
+            }
+
         }
+
     }
 
 

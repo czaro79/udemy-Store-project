@@ -4,7 +4,7 @@ public class Newspaper extends Item {
     private String titleOfNewspaper;
     private String typeOfNewspaper;
 
-    public Newspaper(String titleOfNewspaper, String typeOfNewspaper, int quantity) throws IllegalArgumentException{
+    public Newspaper(String titleOfNewspaper, String typeOfNewspaper, int quantity) {
         super(quantity);
 
         if (titleOfNewspaper == null || titleOfNewspaper.isBlank()) {
@@ -45,7 +45,7 @@ public class Newspaper extends Item {
         return titleOfNewspaper;
     }
 
-    public void setTitleOfNewspaper(String titleOfNewspaper) throws IllegalArgumentException{
+    public void setTitleOfNewspaper(String titleOfNewspaper) {
         if (titleOfNewspaper == null || titleOfNewspaper.isBlank()) {
             throw new IllegalArgumentException("Title of newspaper cannot be null/blank.");
         }
@@ -56,7 +56,7 @@ public class Newspaper extends Item {
         return typeOfNewspaper;
     }
 
-    public void setTypeOfNewspaper(String typeOfNewspaper) throws IllegalArgumentException{
+    public void setTypeOfNewspaper(String typeOfNewspaper) {
         if (typeOfNewspaper == null || typeOfNewspaper.isBlank()) {
             throw new IllegalArgumentException("Type of newspaper cannot be null/blank.");
         }

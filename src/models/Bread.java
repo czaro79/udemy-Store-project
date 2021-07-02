@@ -4,7 +4,7 @@ public class Bread extends Item {
     private String bakeryName;
     private boolean isGlutenFree;
 
-    public Bread(String bakeryName, int quantity, boolean isGlutenFree) throws IllegalArgumentException{
+    public Bread(String bakeryName, int quantity, boolean isGlutenFree) {
         super(quantity);
 
         if (bakeryName == null || bakeryName.isBlank()) {
@@ -49,7 +49,7 @@ public class Bread extends Item {
         this.setBuyingPrice(isGlutenFree ? 2.50 : 2.35);
     }
 
-    public void setBakeryName(String bakeryName) throws IllegalArgumentException{
+    public void setBakeryName(String bakeryName) {
         if (bakeryName == null || bakeryName.isBlank()) {
             throw new IllegalArgumentException("Bakery cannot be null/blank");
         }

@@ -6,7 +6,7 @@ public class Milk extends Item {
     private boolean isLactoseFree;
 
 
-    public Milk(String dairyName, int quantity, String packaging, boolean isLactoseFree) throws IllegalArgumentException{
+    public Milk(String dairyName, int quantity, String packaging, boolean isLactoseFree) {
         super(quantity);
 
         if (dairyName == null || dairyName.isBlank()) {
@@ -41,7 +41,7 @@ public class Milk extends Item {
         return dairyName;
     }
 
-    public void setDairyName(String dairyName) throws IllegalArgumentException{
+    public void setDairyName(String dairyName) {
         if (dairyName == null || dairyName.isBlank()) {
             throw new IllegalArgumentException("Dairy cannot be null/blank");
         }
@@ -52,7 +52,7 @@ public class Milk extends Item {
         return packaging;
     }
 
-    public void setPackaging(String packaging) throws IllegalArgumentException{
+    public void setPackaging(String packaging) {
         if (packaging == null || packaging.isBlank()) {
             throw new IllegalArgumentException("Packaging of milk cannot be null/blank");
         }

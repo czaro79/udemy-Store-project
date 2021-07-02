@@ -13,11 +13,11 @@ public class Store {
         this.store = new ArrayList<>();
     }
 
-    private void addItem(Item item) throws IllegalArgumentException {
+    private void addItem(Item item) {
         //
     }
 
-    public Item getItem(int index) throws IllegalArgumentException {
+    public Item getItem(int index) {
         if (store.isEmpty()) {
             throw new IllegalArgumentException("Cannot get item from empty store.");
         }
@@ -42,7 +42,7 @@ public class Store {
         return temp.toString();
     }
 
-    public double[] getValueOfAllItemsInBuyingPSellingP() throws IllegalArgumentException {
+    public double[] getValueOfAllItemsInBuyingPSellingP() {
         if (store.isEmpty()) {
             throw new IllegalArgumentException("Cannot check the value of items in an empty store.");
         }
@@ -64,7 +64,7 @@ public class Store {
 
     }
 
-    public void loadStore() throws FileNotFoundException, IllegalArgumentException {
+    public void loadStore() throws FileNotFoundException {
 
         FileInputStream fis = new FileInputStream("src/files/warehouse.txt");
         Scanner scan = new Scanner(fis);
@@ -107,4 +107,103 @@ public class Store {
         System.out.println("\t" + df.format(storeValue[0]) + " PLN w cenach zakupu");
         System.out.println("\t" + df.format(storeValue[1]) + " PLN w cenach sprzedaży");
     }
+
+    public void buyItem(int item) {
+        switch (item) {
+            case 1: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Item")) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " cleaning items left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 2: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Bread") && ((Bread) value).getGlutenFree()) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " gluten-free breads left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 3: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Bread") && !((Bread) value).getGlutenFree()) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " breads left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 4: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Milk") && ((Milk) value).getPackaging().equals("bottle") && ((Milk) value).isLactoseFree()) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " bottles of lactose-free milk left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 5: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Milk") && ((Milk) value).getPackaging().equals("box") && ((Milk) value).isLactoseFree()) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " boxes of lactose-free milk left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 6: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Milk") && ((Milk) value).getPackaging().equals("bottle") && !((Milk) value).isLactoseFree()) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " bottles of milk left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 7: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Milk") && ((Milk) value).getPackaging().equals("box") && !((Milk) value).isLactoseFree()) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " boxes of milk left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 8: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Newspaper") && ((Newspaper) value).getTypeOfNewspaper().equals("daily")) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " daily newspapers left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 9: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Newspaper") && ((Newspaper) value).getTypeOfNewspaper().equals("weekly")) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " weekly newspapers left.\n\n");
+                    }
+                }
+                break;
+            }
+            case 10: {
+                for (Item value : this.store) {
+                    if (value.getClass().getSimpleName().equals("Newspaper") && ((Newspaper) value).getTypeOfNewspaper().equals("magazine")) {
+                        value.setQuantity(value.getQuantity() - 1);
+                        System.out.println(value.getQuantity() + " magazines left.\n\n");
+                    }
+                }
+                break;
+            }
+            default: {
+                break;
+            }
+        }
+    }
+
 }
